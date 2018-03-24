@@ -38,7 +38,14 @@ int main()
 		temp.insert(temp.begin() + 3, '-');
 		++final_book[temp];
 	}
+	bool duplicates = 0;
 	for (auto it : final_book)
+	{
 		std::cout << it.first << " " << it.second << std::endl;
+		if (it.second > 2)
+			duplicates = 1;
+	}
+	if (!duplicates)
+		std::cout << "No duplicates. " << std::endl;
 	return 0;
 }
